@@ -53,6 +53,7 @@ docker run \
   $([ -f $RUN_DIR/package.json ] && echo "--volume $RUN_DIR/package.json:/ext/package.json") \
   $([ -d $RUN_DIR/node_modules ] && echo "--volume $RUN_DIR/node_modules:/ext/node_modules") \
   $([ -f $RUN_DIR/env-development ] && echo "--volume $RUN_DIR/env-development:/s_nuxt_1st/env-development") \
+  $([ -f $RUN_DIR/nuxt.config.js ] && echo "--volume $RUN_DIR/nuxt.config.js:/s_nuxt_1st/nuxt.config.js") \
   $([ -d $RUN_DIR/src ] && echo "--volume $RUN_DIR/src:/s_nuxt_1st/src") \
   $([ -d $RUN_DIR/dist ] && echo "--volume $RUN_DIR/dist:/s_nuxt_1st/dist") \
   --workdir $WORKDIR \
