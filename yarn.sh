@@ -9,6 +9,7 @@ if [ ! -z $DOCKER_NAME ]; then NAME=--name=$DOCKER_NAME; fi
 
 docker run \
   --rm -it \
+  -u $UID:$(id -g $USER) \
   $([ ! -z $PORT_TO_OPEN ] && echo "-p $PORT_TO_OPEN:$PORT_TO_OPEN") \
   $NET \
   $NAME \
