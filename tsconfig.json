@@ -7,7 +7,12 @@
     "sourceMap": true,
     "strict": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
+  },
+  "paths": {
+    "@/*": ["*"]
   },
   "include": ["**/*.ts", "**/*.vue"],
   "exclude": ["node_modules"]
