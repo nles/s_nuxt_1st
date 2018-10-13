@@ -9,11 +9,13 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"]
+    }
   },
-  "paths": {
-    "@/*": ["*"]
-  },
+  "defaultExtension": "ts",
   "include": ["**/*.ts", "**/*.vue"],
   "exclude": ["node_modules"]
 }
