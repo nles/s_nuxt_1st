@@ -31,10 +31,11 @@ mkdir -p $RUN_DIR/dist
 mkdir -p $RUN_DIR/node_modules/saavu-cbin-placeholder
 
 ARGS=${@:1}
-if [ "$1" = "install" -o "$1" = "add" -o "$1" = "" ]; then
+TWO="$1 $2"
+if [ "$TWO" = "yarn add" -o "$TWO" = "yarn install" ]; then
   # working with local packages (installing deps)
   WORKDIR="/ext";
-  CMD="yarn $ARGS"
+  CMD="$ARGS"
 else
   # working with packages already in the container
   WORKDIR="/s_nuxt_1st";
@@ -53,6 +54,7 @@ docker run \
   $([ -f $RUN_DIR/package.json ] && echo "--volume $RUN_DIR/package.json:/ext/package.json") \
   $([ -d $RUN_DIR/node_modules ] && echo "--volume $RUN_DIR/node_modules:/ext/node_modules") \
   $([ -f $RUN_DIR/env-development ] && echo "--volume $RUN_DIR/env-development:/s_nuxt_1st/env-development") \
+  $([ -f $RUN_DIR/now.json ] && echo "--volume $RUN_DIR/now.json:/s_nuxt_1st/now.json") \
   $([ -f $RUN_DIR/nuxt.config.js ] && echo "--volume $RUN_DIR/nuxt.config.js:/s_nuxt_1st/nuxt.config.js") \
   $([ -d $RUN_DIR/src ] && echo "--volume $RUN_DIR/src:/s_nuxt_1st/src") \
   $([ -d $RUN_DIR/dist ] && echo "--volume $RUN_DIR/dist:/s_nuxt_1st/dist") \

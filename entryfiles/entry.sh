@@ -8,8 +8,5 @@ cp -a /ext/node_modules/* node_modules
 package-json-merge ./package.json /ext/package.json > /tmp/package.json
 cat /tmp/package.json > ./package.json
 
-if [ "$1" = "bash" ]; then
-  bash
-else
-  yarn ${@:1}
-fi
+# run
+${@:1}
