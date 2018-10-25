@@ -4,24 +4,27 @@ module.exports = {
     browser: true,
     node: true
   },
-  parser: "vue-eslint-parser",
+  parser: 'vue-eslint-parser',
   parserOptions: {
-    parser: "typescript-eslint-parser"
+    parser: 'typescript-eslint-parser'
   },
   plugins: [
     'typescript',
     'vue',
   ],
   extends: [
-    "eslint:recommended",
-    "airbnb-base",
-    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-    "plugin:vue/recommended",
+    'eslint:recommended',
+    'airbnb-base',
+    'plugin:vue/recommended',
+    'plugin:prettier/recommended',
   ],
   rules: {
-    "no-console": "off",
-    "vue/max-attributes-per-line": "off",
-    "vue/html-self-closing": "off",
-    "typescript/no-unused-vars": "error",
+    'no-console': 'off',
+    'no-undef': 'off',
+    'no-unused-vars': 'off',
+    'import/no-unresolved': 'off',
+    'vue/max-attributes-per-line': 'off',
+    'vue/html-self-closing': 'off',
+    'typescript/no-unused-vars': 'error',
   }
 }
