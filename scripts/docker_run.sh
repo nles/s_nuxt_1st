@@ -2,7 +2,7 @@
 RUN_DIR=$(pwd)
 cd $RUN_DIR
 
-IMAGE=saavu-local/s_nuxt_1st
+IMAGE=saavu-local/s_nuxt_1st_v2
 
 RUN_DIR=$(pwd)
 
@@ -24,11 +24,20 @@ if [ ! -f $RUN_DIR/package.json ]; then
   exit 1
 fi
 
+dockerstop() {
+  if [ ! -z $CONTAINER_NAME ]; then
+    docker stop -t 0 $(docker ps | grep $CONTAINER_NAME | cut -d' ' -f1) > /dev/null 2>&1
+  fi
+}
+if [ -z $RUN_IN_BG ]; then
+  trap 'dockerstop' SIGINT SIGTERM EXIT
+fi
+
 # Create placeholders for folders that should exist so that
 # permissions will be correct when they are mounted to the
 # container.
 mkdir -p $RUN_DIR/dist
-mkdir -p $RUN_DIR/node_modules/saavu-cbin-placeholder
+mkdir -p $RUN_DIR/node_modules_app/saavu-cbin-placeholder
 
 ARGS=${@:1}
 TWO="$1 $2"
@@ -55,6 +64,7 @@ docker run \
   $([ -d $RUN_DIR/dist ] && echo "--volume $RUN_DIR/dist:/s_nuxt_1st/dist") \
   $([ -f $RUN_DIR/package.json ] && echo "--volume $RUN_DIR/package.json:/ext/package.json") \
   $([ -d $RUN_DIR/node_modules ] && echo "--volume $RUN_DIR/node_modules:/ext/node_modules") \
+  $([ -d $RUN_DIR/node_modules_app ] && echo "--volume $RUN_DIR/node_modules_app:/ext/node_modules") \
   $([ -f $RUN_DIR/env-development ] && echo "--volume $RUN_DIR/env-development:/s_nuxt_1st/env-development") \
   $([ -f $RUN_DIR/nuxt.config.js ] && echo "--volume $RUN_DIR/nuxt.config.js:/s_nuxt_1st/nuxt.config.js") \
   $([ -f $RUN_DIR/now.json ] && echo "--volume $RUN_DIR/now.json:/s_nuxt_1st/now.json") \

@@ -1,5 +1,7 @@
 #!/bin/bash
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd $SCRIPT_DIR
+cd ..
+cd src
 
-./dependencies/s_nuxt_1st/scripts/docker_run.sh ${@:1}
+find . -type f -print0 | xargs -0 perl -pi -e 's/ +$//'

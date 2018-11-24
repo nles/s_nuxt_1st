@@ -1,5 +1,4 @@
 #!/bin/bash
-#!/bin/bash
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd $SCRIPT_DIR
 cd ..
@@ -14,4 +13,4 @@ echo "--------------------------------------------------------------------------
 echo
 echo
 
-docker build -t saavu-local/s_nuxt_1st --build-arg container_user_id=$(id -u) .
+docker build -t saavu-local/s_nuxt_1st_v2 --build-arg container_user_id=$(id -u) .

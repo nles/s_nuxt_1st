@@ -1,0 +1,10 @@
+node_modules
+node_modules_app
+dependencies/s_*
+
+.vscode
+.eslintrc.js
+.prettierrc
+tsconfig.json
+
+.DS_Store
