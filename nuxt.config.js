@@ -29,6 +29,9 @@ export default {
   build: {
     extend(config, { isDev }) {
       if (isDev && process.client) {
+        config
+          .plugin('friendly-errors')
+          .tap(() => [{ clearConsole: false }]);
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
