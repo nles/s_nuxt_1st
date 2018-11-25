@@ -27,3 +27,7 @@ fi
 if [ ! -f ${PROJECT_ROOT_PATH}/package.json ]; then
   echo "{}" > ${PROJECT_ROOT_PATH}/package.json
 fi
+# nuxt.config.js base
+if [ ! -f ${PROJECT_ROOT_PATH}/nuxt.config.js ]; then
+  cp ./s_nuxt_1st/nuxt.config.js ${PROJECT_ROOT_PATH}/nuxt.config.js
+fi
