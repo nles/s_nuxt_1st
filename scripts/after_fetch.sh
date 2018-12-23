@@ -38,3 +38,9 @@ fi
 if [ ! -f ${PROJECT_ROOT_PATH}/package.json ]; then
   echo "{}" > ${PROJECT_ROOT_PATH}/package.json
 fi
+
+echo
+echo "To start with example base, run:"
+echo "cp ./dependencies/s_nuxt_1st/example/src ./src"
+echo "./s_nuxt_1st yarn add axios"
+echo
