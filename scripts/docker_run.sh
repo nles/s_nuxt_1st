@@ -54,6 +54,7 @@ fi
 docker run \
   -u $UID:$(id -g $USER) \
   -e NODE_ENV=$NODE_ENV \
+  -e NUXT_PORT=$NUXT_PORT \
   $([ -z $RUN_IN_BG ] && echo '--rm' || echo '-d') \
   $([ ! -z $NO_TTY ] && echo '' || echo '-it') \
   $DOCKER_PARAM_NAME \
