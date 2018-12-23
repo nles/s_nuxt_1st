@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /s_nuxt_1st
+cd /s_vue_2nd
 
 # copy external node modules
 cp -a /ext/node_modules/* node_modules
@@ -8,5 +8,4 @@ cp -a /ext/node_modules/* node_modules
 package-json-merge ./package.json /ext/package.json > /tmp/package.json
 cat /tmp/package.json > ./package.json
 
-# run
 ${@:1}
