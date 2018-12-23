@@ -4,6 +4,9 @@ export default {
   env: {
     baseUrl: process.env.BASE_URL || 'http://0.0.0.0:3000',
   },
+  server: {
+    host: '0.0.0.0',
+  },
   head: {
     title: 'Nuxt Template',
     meta: [
