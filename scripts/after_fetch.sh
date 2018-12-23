@@ -4,7 +4,7 @@ if [ -z $PROJECT_ROOT_PATH ]; then
   exit 1
 fi
 
-VERSION=v6
+VERSION=v3
 rm -rf s_nuxt_1st_cache
 git clone --single-branch -b $VERSION https://github.com/saavuio/s_nuxt_1st_cache
 cp s_nuxt_1st_cache/node_modules.tar.bz2 s_nuxt_1st/base
