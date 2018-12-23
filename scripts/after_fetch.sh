@@ -16,7 +16,7 @@ mkdir ${PROJECT_ROOT_PATH}/.webpack-cache 2> /dev/null
 mkdir ${PROJECT_ROOT_PATH}/.nuxt 2> /dev/null
 mkdir ${PROJECT_ROOT_PATH}/src/pages 2> /dev/null
 if [ ! -f ${PROJECT_ROOT_PATH}/src/pages/index.vue ]; then
-  printf "<template>\n  Hi.\n</template>\n" > ${PROJECT_ROOT_PATH}/src/pages/index.vue
+  printf "<template>\n  <span>Hi.</span>\n</template>\n" > ${PROJECT_ROOT_PATH}/src/pages/index.vue
 fi
 
 # link to self
