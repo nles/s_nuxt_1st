@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /s_vue_2nd
+cd /s_nuxt_1st
 
 # copy external node modules
 cp -a /ext/node_modules/* node_modules

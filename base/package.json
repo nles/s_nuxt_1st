@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "start": "NUXT_HOST=0.0.0.0 nuxt start",
     "dev": "NUXT_HOST=0.0.0.0 nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
@@ -13,7 +14,7 @@
     "eslint-config-prettier": "3.1.0",
     "eslint-plugin-prettier": "3.0.0",
     "fork-ts-checker-webpack-plugin": "0.4.9",
-    "nuxt": "2.1.0",
+    "nuxt": "2.3.4",
     "nuxt-class-component": "1.2.1",
     "nuxt-property-decorator": "1.2.0",
     "nuxt-vue-material": "1.1.0",
