@@ -7,7 +7,10 @@ cd ..
 . ./env-development
 
 # bundle
-./s_nuxt_1st.sh yarn run build
+if [ ! -d .nuxt/build ]; then
+  echo "No build found. Building..."
+  ./s_nuxt_1st.sh yarn run build
+fi
 
 # run
 CONTAINER_NAME=$IDENTIFIER-app \
