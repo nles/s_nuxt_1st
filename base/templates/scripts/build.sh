@@ -4,5 +4,4 @@ cd $SCRIPT_DIR
 cd ..
 
 ./s_nuxt_1st.sh yarn install
-./scripts/bundle.sh
 ./scripts/eject.sh
