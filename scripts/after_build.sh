@@ -11,7 +11,7 @@ rm -f $PROJECT_ROOT_PATH/.ejected
 $PROJECT_ROOT_PATH/scripts/build.sh
 
 echo
-echo "To start with example base, run:"
+echo "To start with an example base, run:"
 echo "cp -a ./dependencies/s_nuxt_1st/example/src/* ./src"
 echo "./s_nuxt_1st.sh yarn add axios"
 echo
