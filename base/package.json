@@ -6,7 +6,6 @@
     "start": "nuxt start",
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue,.ts --ignore-path .gitignore ./src"
   },
@@ -14,7 +13,7 @@
     "eslint-config-prettier": "3.1.0",
     "eslint-plugin-prettier": "3.0.0",
     "fork-ts-checker-webpack-plugin": "0.4.9",
-    "nuxt": "2.3.4",
+    "nuxt": "2.4.5",
     "nuxt-class-component": "1.2.1",
     "nuxt-property-decorator": "1.2.0",
     "prettier": "1.14.3",
