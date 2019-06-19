@@ -17,8 +17,8 @@
     "nuxt-property-decorator": "1.2.0",
     "nuxt-ts": "2.8.1",
     "prettier": "1.14.3",
-    "vue": "2.6.8",
-    "vue-server-renderer": "2.6.8",
+    "vue": "2.6.10",
+    "vue-server-renderer": "2.6.10",
     "vuex-class": "0.3.1",
     "vuex-module-decorators": "0.9.7"
   },
